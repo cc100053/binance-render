@@ -3,11 +3,10 @@ services:
     name: binance-render
     schedule: "*/5 * * * *"  # 每5分鐘執行一次
     env: python
-    plan: free
     buildCommand: pip install playwright python-telegram-bot && playwright install --with-deps
     startCommand: python main.py
     envVars:
       - key: BOT_TOKEN
-        sync: false  # 在 Web 介面手動填入
+        sync: false
       - key: CHAT_ID
         sync: false
