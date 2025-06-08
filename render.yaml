@@ -1,7 +1,6 @@
 services:
-  - type: cron
+  - type: worker
     name: binance-render
-    schedule: "*/5 * * * *"  # 每5分鐘執行一次
     env: python
     buildCommand: pip install playwright python-telegram-bot && playwright install --with-deps
     startCommand: python main.py
